@@ -65,7 +65,7 @@ class Teachers:
             today=date.today()
             classroom=Classroom(id,c_name,self.t_id,c_noOfStudents,today,'')
             try:
-                con = pymysql.connect(host="localhost", user="root", password="arsalHussain#10", db="cms")
+                con = pymysql.connect(host="localhost", user="root", password="usamariaz", db="cms")
                 cur = con.cursor()
                 query = "insert into classroom (c_id,c_name,t_id,c_noOfStudents,c_creationDate,c_deletionDate) values(%s,%s,%s,%s,%s,%s)"
                 args = (id, c_name, self.t_id, c_noOfStudents, date.today(), date.today() - date.today())
@@ -89,7 +89,7 @@ class Teachers:
     def getNoOfClasses(self):
         try:
 
-            con = pymysql.connect(host="localhost", user="root", password="arsalHussain#10", db="cms")
+            con = pymysql.connect(host="localhost", user="root", password="usamariaz", db="cms")
             cur = con.cursor()
             query = "select t_noOfClasses from teachers where t_id = %s"
             args = (self.t_id)
@@ -126,7 +126,7 @@ class Teachers:
     def addStudentToClass(self):
 
         try:
-            con = pymysql.connect(host="localhost", user="root", password="arsalHussain#10", db="cms")
+            con = pymysql.connect(host="localhost", user="root", password="usamariaz", db="cms")
             cur = con.cursor()
             if self.getNoOfClasses()>0:
                 print("Following are the", self.getNoOfClasses(),"classes on which you can add student")
@@ -182,7 +182,7 @@ class Teachers:
 
     def getStudentName(self,cur,studentId):
         try:
-            con = pymysql.connect(host="localhost", user="root", password="arsalHussain#10", db="cms")
+            con = pymysql.connect(host="localhost", user="root", password="usamariaz", db="cms")
             cur = con.cursor()
             query="select s_name from students where s_id = %s"
             args=(studentId)
@@ -194,7 +194,7 @@ class Teachers:
 
     def removeStudent(self):
         try:
-            con = pymysql.connect(host="localhost", user="root", password="arsalHussain#10", db="cms")
+            con = pymysql.connect(host="localhost", user="root", password="usamariaz", db="cms")
             cur = con.cursor()
             if self.getNoOfClasses()>0:
 
@@ -250,7 +250,7 @@ class Teachers:
 
     def getStudentsLength(self,classId):
         try:
-            con = pymysql.connect(host="localhost", user="root", password="arsalHussain#10", db="cms")
+            con = pymysql.connect(host="localhost", user="root", password="usamariaz", db="cms")
             cur = con.cursor()
             query="select c_noOfStudents from classroom where c_id = %s"
             args=(classId)
@@ -267,7 +267,7 @@ class Teachers:
 
 
         try:
-            con = pymysql.connect(host="localhost", user="root", password="arsalHussain#10", db="cms")
+            con = pymysql.connect(host="localhost", user="root", password="usamariaz", db="cms")
             cur = con.cursor()
             choice = int(input("Press1 to search from student database.\n2 to search from specific class"))
 
@@ -312,7 +312,7 @@ class Teachers:
 
     def displayStudentsTable(self,cur):
         try:
-            con = pymysql.connect(host="localhost", user="root", password="arsalHussain#10", db="cms")
+            con = pymysql.connect(host="localhost", user="root", password="usamariaz", db="cms")
             cur = con.cursor()
             query="select * from students"
             cur.execute(query)
@@ -348,7 +348,7 @@ class Teachers:
     def createPost(self):
         try:
 
-            con = pymysql.connect(host="localhost", user="root", password="arsalHussain#10", db="cms")
+            con = pymysql.connect(host="localhost", user="root", password="usamariaz", db="cms")
             cur = con.cursor()
             if(self.getNoOfClasses()>0):
                 print("Following are the",self.getNoOfClasses()," classes on which you can add post")
@@ -390,7 +390,7 @@ class Teachers:
 
         try:
 
-            con = pymysql.connect(host="localhost", user="root", password="arsalHussain#10", db="cms")
+            con = pymysql.connect(host="localhost", user="root", password="usamariaz", db="cms")
             cur = con.cursor()
             query = "select t_noOfClasses from teachers where t_id = %s"
             args = (self.t_id)
@@ -436,7 +436,7 @@ def generateClassId():  #generates class id having 5 even letters
 
 def checkForDuplication(id): #it will make sure that no class id is generated twice
     try:
-        con = pymysql.connect(host="localhost", user="root", password="arsalHussain#10", db="cms",
+        con = pymysql.connect(host="localhost", user="root", password="usamariaz", db="cms",
                               cursorclass=pymysql.cursors.DictCursor)
         cur = con.cursor()
         args=(id)

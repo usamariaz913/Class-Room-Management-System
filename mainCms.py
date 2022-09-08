@@ -137,7 +137,7 @@ else:
                 person.classroomInfo(person,date1,date2)
             else:
                 try:
-                    con = pymysql.connect(host="localhost", user="root", password="arsalHussain#10", db="cms")
+                    con = pymysql.connect(host="localhost", user="root", password="usamariaz", db="cms")
                     cur = con.cursor()
                     studentName=input("Enter student name ")
                     id1=input("Enter  first class id")

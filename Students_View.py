@@ -15,7 +15,7 @@ class Students:
     def joinClass(self):
 
         try:
-            con = pymysql.connect(host="localhost", user="root", password="arsalHussain#10", db="cms")
+            con = pymysql.connect(host="localhost", user="root", password="usamariaz", db="cms")
             cur = con.cursor()
             if self.displayClassroom(cur)==True:
                 classId = input("Enter the class id in which you want to join")
@@ -59,7 +59,7 @@ class Students:
             print(e)
     def leaveClass(self):
         try:
-            con = pymysql.connect(host="localhost", user="root", password="arsalHussain#10", db="cms")
+            con = pymysql.connect(host="localhost", user="root", password="usamariaz", db="cms")
             cur = con.cursor()
 
 
@@ -102,7 +102,7 @@ class Students:
 
     def viewTeachersPost(self):
         try:
-            con = pymysql.connect(host="localhost", user="root", password="arsalHussain#10", db="cms")
+            con = pymysql.connect(host="localhost", user="root", password="usamariaz", db="cms")
             cur = con.cursor()
             query="select * from posts"
             cur.execute(query)
@@ -142,7 +142,7 @@ class Students:
 
     def displayClassroom(self,cur):
         try:
-            con = pymysql.connect(host="localhost", user="root", password="arsalHussain#10", db="cms")
+            con = pymysql.connect(host="localhost", user="root", password="usamariaz", db="cms")
             cur = con.cursor()
 
             deletionDate="0000-00-00"

@@ -88,7 +88,7 @@ def signup():
         # Connecting to the DataBase
 
         connection = pymysql.connect(
-            host="localhost", user="root", password="arsalHussain#10", database="cms")
+            host="localhost", user="root", password="usamariaz", database="cms")
         # create cursor
         cur = connection.cursor()
         count = 0
@@ -200,7 +200,7 @@ def login():
         # Connecting to the DataBase
 
         connection = pymysql.connect(
-            host="localhost", user="root", password="arsalHussain#10", database="cms")
+            host="localhost", user="root", password="usamariaz", database="cms")
 
         # create cursor
         cur = connection.cursor()
@@ -258,7 +258,7 @@ def login():
             if(loginStatus):
                 print("Account ID and Password Matched")
                 try:
-                    con = pymysql.connect(host="localhost", user="root", password="arsalHussain#10", db="cms")
+                    con = pymysql.connect(host="localhost", user="root", password="usamariaz", db="cms")
                     cur = con.cursor()
                     query = "select t_name, t_phone, t_noOfClasses, t_email, t_accountStatus " \
                             "from teachers where t_id= %s "
@@ -328,7 +328,7 @@ def login():
             if(loginStatus):
                 print("Account ID and Password Matched")
                 try:
-                    con = pymysql.connect(host="localhost", user="root", password="arsalHussain#10", db="cms")
+                    con = pymysql.connect(host="localhost", user="root", password="usamariaz", db="cms")
                     cur = con.cursor()
                     query = "select s_name, s_email, s_accountStatus from students where s_id = %s "
                     args = (accountId)
@@ -364,7 +364,7 @@ def login():
             if(loginStatus):
                 print("Account ID and Password Matched")
                 try:
-                    con = pymysql.connect(host="localhost", user="root", password="arsalHussain#10", db="cms")
+                    con = pymysql.connect(host="localhost", user="root", password="usamariaz", db="cms")
                     cur = con.cursor()
                     query = "select a_name, a_email from admin where a_id = %s "
                     args = (accountId)
@@ -407,7 +407,7 @@ class AdminView:
             # Connecting to the DataBase
 
             connection = pymysql.connect(
-                host="localhost", user="root", password="arsalHussain#10", database="cms")
+                host="localhost", user="root", password="usamariaz", database="cms")
             # create cursor
             cur = connection.cursor()
 
@@ -456,7 +456,7 @@ class AdminView:
             # Connecting to the DataBase
 
             connection = pymysql.connect(
-                host="localhost", user="root", password="arsalHussain#10", database="cms")
+                host="localhost", user="root", password="usamariaz", database="cms")
             # create cursor
             cur = connection.cursor()
             className=Teachers_view.getCompleteClassName(cur,classroomId)
@@ -514,7 +514,7 @@ class AdminView:
             # Connecting to the DataBase
 
             connection = pymysql.connect(
-                host="localhost", user="root", password="arsalHussain#10", database="cms")
+                host="localhost", user="root", password="usamariaz", database="cms")
 
             # create cursor
             cur = connection.cursor()
@@ -543,7 +543,7 @@ class AdminView:
         try:
             # Connecting to the DataBase
             connection = pymysql.connect(
-                host="localhost", user="root", password="arsalHussain#10", database="cms")
+                host="localhost", user="root", password="usamariaz", database="cms")
             # create cursor
             cur = connection.cursor()
             query = "select c_name,c_deletionDate from classroom where c_id = %s"
